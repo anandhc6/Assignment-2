@@ -66,7 +66,51 @@ Example:
 ```python Part_A_cmdline.py 64 True 64 True 0.15 128 3   ```
 
 
-where Part_A_cmdline.py is the filename and the parameters of order,    
+where Part_A_cmdline.py is the filename and the parameters of order,  
+
+# Part B - Fine tuning a pretrained model
+
+The data preperation is done using the **datagen(batch_size, augment_data)** function.              
+
+The **define_model(model_name, activation_function_dense, dense_layer, dropout,image_size, pre_layer_train)** function is used to load a pretrained model specified by <model_name> without the top layer and then add a new top layers to fine tune them.
+
+**Passing hyperparameters as command line arguments**     
+You can pass the following command with the 'inaturalist_12K' data folder in the present working directory.
+
+**Usage**
+* ```augment_data```, this argument requires True or False and decides whether to augment data or not.
+* ```batch_size```, this argument requires batch size to be passed.
+* ```dropout```, this argument requires dropout to be passed.
+* ```dense_layer```, this argument requires dense layer size to be passed.
+* ```layer_freeze```, this argument requires True or False and decides whether to freeze layers or not.
+* ```pre_model```, this argument requires the pretrained model to be passed.
+
+
+```python <filename> <augment_data> <batch_size> <dropout> <dense_layer> <layer_freeze> <pre_model> ```
+
+
+Example: 
+```python Part_B_cmdline.py True 64 0 128 0 Exception   ```
+
+
+
+
+# Part C - 3. Using a pretrained Object Detection model for a social application
+
+Count vehicles in video (webcam or file) with YOLO
+
+Download pre-trained YOLO v3 model from Darknet (https://pjreddie.com/darknet/yolo/) and place in yolo-coco directory. Required files:
+
+* coco.names
+* yolov3.cfg
+* yolov3.weights
+App can be configured with ini file.
+
+Usage:
+
+python detector.py -c configfile
+
+Example inifiles are provided
 
 
 
