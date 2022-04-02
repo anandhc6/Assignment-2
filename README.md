@@ -53,10 +53,20 @@ You can pass the following command with the 'inaturalist_12K' data folder in the
 **Usage**
 * ```no_of_filters```, this argument requires the number of filters to be used by the model.
 * ```augment_data```, this argument requires True or False and decides whether to augment data or not.
+* ```batch_size```, this argument requires batch size to be passed.
+* ```batch_normalisation```, this argument requires True or False snd decides whether to do batch_normalisation or not.
+* ```dropout```, this argument requires dropout to be passed.
+* ```dense_layer```, this argument requires dense layer size to be passed.
+* ```filter_convol_size```, this argument requires kernel size to be passed.
 
-python Part_A_cmdline.py 64 True 64 True 0.15 128 3   
+```python <filename> <no_of_filters> <augment_data> <batch_size> <batch_normalisation> <dropout> <dense_layer> <filter_convol_size> ```
+
+
+Example: 
+```python Part_A_cmdline.py 64 True 64 True 0.15 128 3   ```
+
+
 where Part_A_cmdline.py is the filename and the parameters of order,    
-python <filename> <no_of_filters> <augment_data> <batch_size> <batch_normalisation> <dropout> <dense_layer> <filter_convol_size> 
 
 
 
