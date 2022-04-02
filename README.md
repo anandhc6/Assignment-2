@@ -112,5 +112,7 @@ In this application, if the detected vehicle count is less than 20, then the tra
 
 Example: ```python3 yolo_video.py --input bridge.mp4 --output Traffic_lights_window.mp4 --yolo yolo-coco ```
 
+Link to output video:https://youtu.be/50XhFkEaXvo
 
+Link to wandb report: https://wandb.ai/anandh/DL_assignment_2/reports/Assignment-2--VmlldzoxNzY0NTI3
 
