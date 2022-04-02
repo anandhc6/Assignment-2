@@ -69,6 +69,7 @@ Example:
 where Part_A_cmdline.py is the filename and the parameters of order,  
 
 # Part B - Fine tuning a pretrained model
+The data set from keras pretrained on Imagenet is used and strategy like finetuning the model with naturalist data that was used in previous section and another strategy of pre-training the model with freezing all layers except the top layer and then freezing only initial k layers and unfreezing the other layers and fine tuning is perfomed and the model performance is observed. 
 
 The data preperation is done using the **datagen(batch_size, augment_data)** function.              
 
@@ -97,20 +98,19 @@ Example:
 
 # Part C - 3. Using a pretrained Object Detection model for a social application
 
-Count vehicles in video (webcam or file) with YOLO
+You Only Look Once (YOLO) is a CNN architecture for performing real-time object detection. This application was adapted from Vehicle Counter YoloV3 application- https://github.com/guptavasu1213/Yolo-Vehicle-Counter , this application gives count of vehicles passed. 
+We have changed it to give count of vehicles in each frame and the corresponding traffic lights time window is also displayed. 
 
-Download pre-trained YOLO v3 model from Darknet (https://pjreddie.com/darknet/yolo/) and place in yolo-coco directory. Required files:
+When the vehicles in the frame are detected, they are counted. After getting detected once, the vehicles get tracked and do not get re-counted by the algorithm.
 
-* coco.names
-* yolov3.cfg
-* yolov3.weights
-App can be configured with ini file.
+```yolo_video.py``` contains the code for detecting the vehicles, count number of vehicles in each frame and print the relevant text at top of the screen. 
 
-Usage:
+In this application, if the detected vehicle count is less than 20, then the traffic lights time window is set to 30 seconds and when the detected vehicle count is 20 and above, the traffic lights time window is 60 seconds.
 
-python detector.py -c configfile
+**Usage**
+```python3 yolo_video.py --input --output --yolo yolo-coco ```
 
-Example inifiles are provided
+Example: ```python3 yolo_video.py --input bridge.mp4 --output Traffic_lights_window.mp4 --yolo yolo-coco ```
 
 
 
