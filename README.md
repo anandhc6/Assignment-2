@@ -48,7 +48,11 @@ A random image is taken and the plots are generated.
 The generated plot shows which part of the image excites various neurons in the fifth convolution layer.
 
 **Passing hyperparameters as command line arguments**     
-You can pass the following command with the 'inaturalist_12K' data folder in the present working directory.   
+You can pass the following command with the 'inaturalist_12K' data folder in the present working directory.
+
+**Usage**
+* ```no_of_filters```, this argument requires the number of filters to be used by the model.
+* ```augment_data```, this argument requires True or False and decides whether to augment data or not.
 
 python Part_A_cmdline.py 64 True 64 True 0.15 128 3   
 where Part_A_cmdline.py is the filename and the parameters of order,    
